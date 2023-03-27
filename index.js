@@ -46,7 +46,7 @@ app.use("/api/categories", categoryRoute);
 app.use("*", function(req, res){
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 })
-
-app.listen("5000", () => {
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
   console.log("Backend is running.");
 });
